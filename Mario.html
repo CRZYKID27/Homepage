@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SUS</title>
+</head>
+<body style="background-color: #ff0000;">
+  <h1 style="text-align: center;"></h1>
+
+  <img onmouseover="playAudio('audio9')" src="mario-kart.gif" alt="Animated GIF" style="display: block; margin: 0 auto; width: 100%; height: 100%;">
+
+  <script>
+    var audio = new Audio(); // Create a new audio element
+  
+    function playAudio(audioId) {
+      audio.src = audioId + '.mp3'; // Add the path to your audio file
+      audio.play(); // Play the audio
+    }
+  
+    function stopAudio() {
+      audio.pause(); // Pause the audio
+      audio.currentTime = 0; // Reset the audio to the beginning
+    }
+  </script>
+</body>
+</html>

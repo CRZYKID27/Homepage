@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+  <audio autoplay="one">
+    <source src="bg.mp3" type="audio/mp3"> 
+  </audio>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>GAMING PROFILE</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" charset="utf-8">
+    
+    function hasClassName(inElement, inClassName)
+    {
+        var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)');
+        return regExp.test(inElement.className);
+    }
+
+    function addClassName(inElement, inClassName)
+    {
+        if (!hasClassName(inElement, inClassName))
+            inElement.className = [inElement.className, inClassName].join(' ');
+    }
+
+    function removeClassName(inElement, inClassName)
+    {
+        if (hasClassName(inElement, inClassName)) {
+            var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)', 'g');
+            var curClasses = inElement.className;
+            inElement.className = curClasses.replace(regExp, ' ');
+        }
+    }
+
+    function toggleClassName(inElement, inClassName)
+    {
+        if (hasClassName(inElement, inClassName))
+            removeClassName(inElement, inClassName);
+        else
+            addClassName(inElement, inClassName);
+    }
+    
+    function toggleBackfaces()
+    {
+      var backfacesVisible = document.getElementById('backfaces').checked;
+      var shape = document.getElementById('shape');
+      if (backfacesVisible)
+        addClassName(shape, 'backfaces');
+      else
+        removeClassName(shape, 'backfaces');
+    }
+    setTimeout(function(){var shape = document.getElementById('shape');
+      if (hasClassName(shape, 'cube')) {
+        removeClassName(shape, 'cube');
+        addClassName(shape, 'ring');
+      } else {
+        removeClassName(shape, 'ring');
+        addClassName(shape, 'cube');
+      }
+      
+      // Move the ring back in Z so it's not so in-your-face.
+      var stage = document.getElementById('stage');
+      if (hasClassName(shape, 'ring'))
+        stage.style.webkitTransform = 'translateZ(-200px)';
+      else
+        stage.style.webkitTransform = '';}, 2500);
+ 
+  </script>
+</head>
+<body>
+  <p>GAMING PROFILE</p>
+  <div id="container">
+    <div id="stage">
+      <div id="shape" class="cube backfaces">
+        <div class="plane one"><img src="gif1.gif" alt="GIF 1" /></div>
+        <div class="plane two"><img src="gif2.gif" alt="GIF 1" /></div>
+        <div class="plane three"><img src="gif3.gif" alt="GIF 1" /></div>
+        <div class="plane four"><img src="gif4.gif" alt="GIF 1" /></div>
+        <div class="plane five"><img src="gif5.gif" alt="GIF 1" /></div>
+        <div class="plane six"><img src="gif6.gif" alt="GIF 1" /></div>
+      </div>
+  </div>
+  </div>
+  <br>
+  <br> 
+  <br>  
+  <br> 
+  <br> 
+  <br>
+  <br> 
+  <br>
+  <br>
+  <br>
+  <br>
+<p class="tableheading">MY LIBRARY</p>
+<table class="table">
+  <tr>
+    <td onmouseover="playAudio('audio1')" onmouseout="stopAudio()"><a href="https://www.youtube.com/watch?v=f_VBXRZuHTc" target="_blank"><img class="tableimg" src="images/gtavc.jpg"></a></td>
+    <td onmouseover="playAudio('audio2')" onmouseout="stopAudio()"><a href="https://www.youtube.com/watch?v=TNiHOpHbCzM" target="_blank"><img class="tableimg" src="images/m3.jpg"></a></td>
+    <td onmouseover="playAudio('audio3')" onmouseout="stopAudio()"><a href="https://www.youtube.com/watch?v=q4GdJVvdxss" target="_blank"><img class="tableimg" src="images/spider.jpg"></a></td>
+  </tr>
+  <tr>
+    <td>GTA:VICE CITY</td>
+    <td>MAFIA III</td> 
+    <td>SPIDER-MAN</td>
+  </tr>
+  <tr>
+    <td onmouseover="playAudio('audio4')" onmouseout="stopAudio()"><a href="https://www.youtube.com/watch?v=W01L70IGBgE" target="_blank"><img class="tableimg" src="images/lou.jpg"></a></td>
+    <td onmouseover="playAudio('audio5')" onmouseout="stopAudio()"><a href="https://www.youtube.com/watch?v=GjugTk9ovcI" target="_blank"><img class="tableimg" src="images/ufc.jpg"></a></td>
+    <td onmouseover="playAudio('audio6')" onmouseout="stopAudio()"><a href="https://www.youtube.com/watch?v=eaW0tYpxyp0" target="_blank"><img class="tableimg" src="images/rdr2.jpg"></a></td>
+  </tr>
+  <tr>
+    <td>THE LAST OF US</td>
+    <td>UFC 4</td>
+    <td>RED DEAD REDEMPTION 2</td>
+  </tr>
+  <tr>
+    <td onmouseover="playAudio('audio7')" onmouseout="stopAudio()"><a href="https://www.youtube.com/watch?v=PFko4Kut39s" target="_blank"><img class="tableimg" src="images/wd.jpg"></a></td>
+    <td onmouseover="playAudio('audio8')" onmouseout="stopAudio()"><a href="https://www.youtube.com/watch?v=hfJ4Km46A-0" target="_blank"><img class="tableimg" src="images/gow.webp"></a></td>
+    <td onmouseover="playAudio('audio9')" onmouseout="stopAudio()"><a href="file:///D:/STUDIES/html/Html/Mario.html" target="_blank"><img class="tableimg" src="images/sm.jpg"></a></td>
+  </tr>
+  <tr>
+    <td>WATCH DOGS</td>
+    <td>GOW:RAGNAROCK</td>
+    <td>SUPER MARIO BROS 3</td>
+  </tr>
+  
+</table>
+<script>
+  var audio = new Audio(); // Create a new audio element
+
+  function playAudio(audioId) {
+    audio.src = audioId + '.mp3'; // Add the path to your audio file
+    audio.play(); // Play the audio
+  }
+
+  function stopAudio() {
+    audio.pause(); // Pause the audio
+    audio.currentTime = 0; // Reset the audio to the beginning
+  }
+</script>
+</body>
+</html>
